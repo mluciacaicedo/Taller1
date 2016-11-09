@@ -2,6 +2,13 @@ doctype html
 html
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet',href='/stylesheets/style.css')
+    link(rel='stylesheet',href='/stylesheets/vendor.min.css')
+      
   body
     block content
+     p {{ 7+5 }}
+
+   script(src='/javascripts/vendor.min.js')
+    
+
