@@ -8,4 +8,15 @@ block content
     .well
         p | Si en el texto siguiente aparece 12 en un recuadro, tenemos nuestra plantilla de Angular-Bootstrap de forma correcta:
         p {{ 7+5 }}
+
+    .well
+      div(ng-controller ='OperacionesController')
+        | Ingresar Primer Número:
+        input.form-control(type='number',#numUno)
+        br
+        | Ingresar Segundo Número:
+        input.form-control(type='number',#numDos)
+        br
+        
+
   

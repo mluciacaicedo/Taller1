@@ -1,5 +1,5 @@
 doctype html
-html
+html(ng-app)
   head
     title= title
     link(rel='stylesheet',href='/stylesheets/style.css')
@@ -7,7 +7,6 @@ html
       
   body
     block content
-     p {{ 7+5 }}
 
    script(src='/javascripts/vendor.min.js')
     

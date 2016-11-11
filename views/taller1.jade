@@ -5,5 +5,25 @@ block content
   p Welcome to #{title}
   .container
     .well
-        p | Si en el texto siguiente aparece 12 en un recuadro, tenemos nuestra plantilla de Angular-Bootstrap de forma correcta:
+        p |Si en el texto siguiente aparece 12 en un recuadro, tenemos nuestra plantilla de Angular-Bootstrap de forma correcta:
         p {{ 7+5 }}
+
+  .container
+    .well
+      div(ng-controller ='OperacionesController')
+        | Ingresar Primer Numero
+        input.form-control(type='number',#numUno)
+        br
+        | Ingresar Segundo Nombre
+        input.form-control(type='number',#numDos)
+        br
+        .btn-group(role='group', aria-label='...')
+          button.btn.btn-default.span.glyphicon.glyphicon-plus(type='button')
+          button.btn.btn-default.span.glyphicon.glyphicon-minus(type='button') 
+          button.btn.btn-default.span.glyphicon.glyphicon-asterisk(type='button') 
+          button.btn.btn-default(type='button')
+          
+
+       
+
+
