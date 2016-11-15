@@ -9,21 +9,49 @@ block content
         p {{ 7+5 }}
 
   .container
-    .well
+    .well.panel.panel-default
       div(ng-controller ='OperacionesController')
-        | Ingresar Primer Numero
-        input.form-control(type='number',#numUno)
-        br
-        | Ingresar Segundo Nombre
-        input.form-control(type='number',#numDos)
-        br
-        .btn-group(role='group', aria-label='...')
-          button.btn.btn-default.span.glyphicon.glyphicon-plus(type='button')
-          button.btn.btn-default.span.glyphicon.glyphicon-minus(type='button') 
-          button.btn.btn-default.span.glyphicon.glyphicon-asterisk(type='button') 
-          button.btn.btn-default(type='button')
-          
-
        
+       .panel-heading Calculadora
+       .panel-body
+            | Ingresar Primer Número
+            input.form-control(type='number',ng-model="numUno")
+            br
+            | Ingresar Segundo Número
+            input.form-control(type='number',ng-model="numDos")
+            br
+            .btn-group(role='group', aria-label='...')
+              button.btn.btn-primary(ng-click="sumar()") +
+              button.btn.btn-primary(ng-click="restar()") -
+              button.btn.btn-primary(ng-click="multiplicar()") *
+              button.btn.btn-primary(ng-click="dividir()") /
+              button.btn.btn-primary(ng-click="clear()") C
+            br
+            br
+            | Resultado
+            input.form-control(type='number',ng-model="resultado") 
+            br
+  .container
+    .well.panel.panel-default
+        div(ng-controller="TiendaController")
+           h4 Nombre: {{articulo.nombre }}
+           h4 Precio: {{articulo.precio }}
+
+  .container
+   .row
+    .col-md-12
+     div.col-md-8(ng-controller = "TiendaController1", ng-cloak)
+       input.form-control(ng-model="buscar",placeholder="Buscar:")
+       div(ng-repeat="articulo in articulos | filter: buscar")
+        h1 {{articulo.nombre }}
+        h3 {{articulo.precio  | currency:"€ " :2 }}  
+        p  {{articulo.stock }}
+        IMG.img-responsive.container(ng-src="{{articulo.imagen }}")
+        button.btn.btn-primary(type="button",ng-if="articulo.stock>0") Comprar
+        hr
+    
+    .col-md-2
+
+          
 
 
