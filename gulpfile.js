@@ -13,7 +13,10 @@ var cleanCSS=require('gulp-clean-css');
 * Configuración de la tarea 'demo'
 */
 gulp.task('juntar', function () {
-  gulp.src(['bower_components/jquery/dist/jquery.js','bower_components/angular/angular.js','bower_components/bootstrap/dist/js/bootstrap.js'])
+  gulp.src(['bower_components/jquery/dist/jquery.js',
+            'bower_components/angular/angular.js',
+            'bower_components/angular-messages/angular-messages.js',
+            'bower_components/bootstrap/dist/js/bootstrap.js'])
   .pipe(concat('vendor.min.js'))
   .pipe(uglify())
   .pipe(gulp.dest('public/javascripts/'));

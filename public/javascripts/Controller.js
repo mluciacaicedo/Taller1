@@ -1,4 +1,4 @@
-var app= angular.module('taller1', []);
+var app= angular.module('taller1', ['ngMessages']);
 
 app.controller('OperacionesController', function($scope) {
   
@@ -33,3 +33,11 @@ app.controller('TiendaController1',TiendaController1);
     function TiendaController1($scope){
         $scope.articulos = articulos;
     }
+
+app.controller('ReviewController', ReviewController);
+ ReviewController.$injet = ['$scope'];
+
+   function ReviewController($scope){
+       console.log("entra aca");
+    }
+

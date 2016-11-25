@@ -49,8 +49,29 @@ block content
         IMG.img-responsive.container(ng-src="{{articulo.imagen }}")
         button.btn.btn-primary(type="button",ng-if="articulo.stock>0") Comprar
         hr
+
+  //.container
+   .well.panel.panel-dividir
+    div(ng-cloak)
+      form(name='reviewForm' ng-controller="ReviewController"  ng-submit="reviewForm.$valid && submit()" novalidate)
+      p Usuario
+      input.form-control(placeholder='User Name' ng-minlenght="3" ng-maxlenght="10" required ng-model="model.user"  name="user")
+      div(ng-messages="reviewForm.user.$error" ng-if="reviewForm.user.$dirty")
+      span.help-block(ng-message = "required") Este campo es obligatorio
+      
+      p Contraseña
+      input.form-control(type="password" placeholder='Contraseña' ng-minlenght="2" ng-maxlenght="10" required ng-model="model.password"  name="password")
+      div(ng-messages="reviewForm.password.$error" ng-if="reviewForm.password.$dirty")
+      span.help-block(ng-message = "required") Este campo es obligatorio
+      p  Confirmar Contraseña
+      input.form-control(type="password" placeholder='Confirmar Contraseña' class="confirm-password" required ng-model="model.confirmar"  name="confirmar")
+      div(ng-messages="reviewForm.confirmar.$error" ng-if="reviewForm.confirmar.$dirty")
+      span.help-block(ng-message = "required") Este campo es obligatorio
+      br
+      input.btn.btn-primary(type='submit', value='Registrar')
+
     
-    .col-md-2
+  
 
           
 
